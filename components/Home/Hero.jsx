@@ -62,7 +62,13 @@ function Hero() {
           transition={{ duration: 0.5, delayChildren: 0.5 }}
           className="app__header-img"
         >
-          <Image fill src="/profile.png" alt="profile_bg" unoptimized />
+          <Image
+            fill
+            src="/profile.png"
+            alt="profile_bg"
+            unoptimized
+            priority
+          />
           <motion.div
             initial={false}
             whileInView={{ scale: [0, 1] }}
@@ -86,6 +92,7 @@ function Hero() {
                 height={100}
                 src={`/${circle}`}
                 alt="profile_bg"
+                priority
               />
             </div>
           ))}

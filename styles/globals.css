@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-base: "DM Sans", sans-serif;
+  --font-quote: "Gelasio", serif;
+  --primary-color: #edf2f8;
+  --secondary-color: #313bac;
+  --black-color: #030303;
+  --lightGray-color: #e4e4e4;
+  --gray-color: #6b7688;
+  --brown-color: #46364a;
+  --white-color: #ffffff;
+
+  --primary-dark: #0e0d39;
+  --secondary-dark: #101141;
+  --red-color: #eb4a4a;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--primary-dark);
+  font-family: var(--font-base);
+}
+
+.app {
+  background-color: var(--primary-dark);
+  font-family: var(--font-base);
+}
+
+.app__whitebg {
+  background-color: var(--white-color);
+}
+
+.app__primarybg {
+  background-color: var(--primary-color);
+}
+
+.app__container {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: row;
+  background: var(--primary-dark);
+}
+
+.app__flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app__wrapper {
+  flex: 1;
+  width: 100%;
+  flex-direction: column;
+  padding: 4rem 2rem;
+
+  @media screen and (max-width: 450px) {
+    padding: 4rem 1rem 2rem !important;
+  }
+}
+.app__padding {
+  padding-top: 6rem;
+}
+
+.img-responsive {
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+.copyright {
+  width: 100%;
+  padding: 2rem 0 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  p {
+    text-transform: uppercase;
+    color: var(--gray-color);
+  }
+}
+
+.head-text {
+  font-size: 2.75rem;
+  font-weight: 800;
+  text-align: center;
+  color: var(--white-color);
+  text-transform: capitalize;
+
+  span {
+    color: var(--secondary-color);
+  }
+
+  @media screen and (min-width: 2000px) {
+    font-size: 4rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    font-size: 2rem;
+  }
+}
+
+.p-text {
+  font-size: 0.8rem;
+  text-align: left;
+  color: var(--gray-color);
+  line-height: 1.5;
+
+  @media screen and (min-width: 2000px) {
+    font-size: 1.75rem;
+  }
+}
+
+.custom__button {
+  background-color: var(--secondary-color);
+  color: var(--color-black);
+  font-family: var(--font-base);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 28px;
+  font-size: 16px;
+  padding: 0.5rem 1.5rem;
+  border-radius: 1px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  @media screen and (min-width: 2000px) {
+    font-size: 37px;
+    line-height: 67px;
+  }
+}
+
+.bold-text {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--black-color);
+  text-align: left;
+
+  @media screen and (min-width: 2000px) {
+    font-size: 2rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    font-size: 0.9rem;
+  }
+}
+
+.app__social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 1rem;
+
+  a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--secondary-dark);
+    margin: 0.25rem 0;
+    border: 1px solid var(--primary-dark);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 0.3s ease-in-out;
+
+    svg {
+      width: 15px;
+      height: 15px;
+      color: var(--white-color);
+    }
+
+    &:hover {
+      background-color: var(--secondary-color);
+      border-color: var(--secondary-color);
+
+      svg {
+        color: var(--white-color);
+      }
+    }
+
+    @media screen and (min-width: 2000px) {
+      width: 70px;
+      height: 70px;
+
+      margin: 0.5rem 0;
+
+      svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}
+
+.app__navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 1rem;
+
+  .app__navigation-dot {
+    writing-mode: vertical-rl;
+    margin: 0.5rem;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 1.5px;
+    margin: 0.5rem;
+
+    transition: background-color 0.2s ease-in-out;
+
+    &:before {
+      content: "\2014\0020";
+    }
+
+    &:hover {
+      color: var(--red-color);
+    }
+
+    @media screen and (min-width: 2000px) {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .app__navigation,
+  .app__social {
+    display: none;
+  }
+
+  .copyright {
+    padding: 2rem;
+  }
+}
+
+.blockquote {
+  min-width: 300px;
+  max-width: 500px;
+  color: var(--gray-color);
+
+  &::before {
+    content: "\201c";
+    font-size: 4rem;
+    margin-bottom: -40px;
+    margin-top: -20px;
+  }
+  .blockquote__text {
+    font-family: var(--font-quote);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--gray-color);
+    margin: 0;
+  }
+  .blockquote__author {
+    font-weight: bold;
+    font-style: normal;
+    text-align: right;
+    &::before {
+      content: "\2014\0020";
+    }
+  }
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
+}

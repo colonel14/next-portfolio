@@ -10,6 +10,7 @@ function NavigationDots({ active }) {
           key={link + index}
           className="app__navigation-dot"
           style={active === link ? { color: "var(--red-color)" } : {}}
+          aria-label="side link"
         >
           {link}
         </Link>

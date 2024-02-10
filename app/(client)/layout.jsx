@@ -1,5 +1,8 @@
 import "@/styles/globals.css";
+import "aos/dist/aos.css";
 import Navbar from "@/components/Navbar";
+import Providers from "@/providers/AosProvider";
+import AosProvider from "@/providers/AosProvider";
 
 export const metadata = {
   title: "Abdallah Mohamed",
@@ -10,6 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        <AosProvider />
         <Navbar />
         <main>{children}</main>
       </body>

@@ -1,6 +1,6 @@
 "use client";
-
 import "@/styles/hero.css";
+
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -24,6 +24,7 @@ function Hero() {
     <SectionLayout idName="home">
       <div className="app__header app__flex">
         <motion.div
+          initial={false}
           whileInView={{ x: [-100, 0], opacity: [0, 1] }}
           transition={{ duration: 0.5 }}
           className="app__header-info"
@@ -41,7 +42,9 @@ function Hero() {
               <p className="p-text">Freelancer</p>
             </div>
             <div className="hire-cmp app__flex">
-              <Link href="/contact">Hire Me</Link>
+              <Link href="/contact" aria-label="hire me">
+                Hire Me
+              </Link>
             </div>
           </div>
           <blockquote className="blockquote">
@@ -61,6 +64,7 @@ function Hero() {
         >
           <Image fill src="/profile.png" alt="profile_bg" unoptimized />
           <motion.div
+            initial={false}
             whileInView={{ scale: [0, 1] }}
             transition={{ duration: 1, ease: "easeInOut" }}
             alt="profile_circle"
@@ -70,13 +74,19 @@ function Hero() {
           </motion.div>
         </motion.div>
         <motion.div
+          initial={false}
           variants={scaleVariants}
           whileInView={scaleVariants.whileInView}
           className="app__header-circles"
         >
           {circles.map((circle, index) => (
             <div className="circle-cmp app__flex" key={`circle-${index}`}>
-              <img src={`/${circle}`} alt="profile_bg" />
+              <Image
+                width={100}
+                height={100}
+                src={`/${circle}`}
+                alt="profile_bg"
+              />
             </div>
           ))}
         </motion.div>

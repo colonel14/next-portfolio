@@ -39,7 +39,11 @@ function Contact() {
               alt="whatsapp icon"
               className="object-cover"
             />
-            <Link href="https://wa.me/+2001012234592" className="p-text">
+            <Link
+              aria-label="mobile phone"
+              href="https://wa.me/+2001012234592"
+              className="p-text"
+            >
               +20 01012234592
             </Link>
           </div>
@@ -69,7 +73,7 @@ function Contact() {
                 name="message"
               />
             </div>
-            <button type="button" className="p-text">
+            <button type="button" className="p-text" aria-label="Send Message">
               {!loading ? "Send Message" : "Sending..."}
             </button>
           </div>

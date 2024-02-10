@@ -28,23 +28,24 @@ function Navbar() {
   const [toggle, setToggle] = useState(false);
   const pathname = usePathname();
 
-  console.log(pathname);
-
   return (
     <nav className="app__navbar">
-      <Link href="/" className="app__navbar-logo">
+      <Link aria-label="logo" href="/" className="app__navbar-logo">
         <Logo />
       </Link>
       <ul className="app__navbar-links">
         {navLinks.map((link) => (
           <li
             key={`link-${link.name}`}
+            aria-label="nav link"
             className={cn(
               "app__flex p-text",
               pathname == link.href && "active"
             )}
           >
-            <Link href={link.href}>{link.name}</Link>
+            <Link aria-label="nav link" href={link.href}>
+              {link.name}
+            </Link>
           </li>
         ))}
       </ul>
@@ -56,7 +57,11 @@ function Navbar() {
           alt="whatsapp icon"
           className="object-cover"
         />
-        <Link href="https://wa.me/+2001012234592" target="blank">
+        <Link
+          aria-label="whatsapp number"
+          href="https://wa.me/+2001012234592"
+          target="blank"
+        >
           {" "}
           010 122 34 592
         </Link>
@@ -71,7 +76,11 @@ function Navbar() {
             <X onClick={() => setToggle(false)} />
             <ul className="app__navbar-links">
               {navLinks.map((link) => (
-                <li key={`link-${link.name}`} className="app__flex p-text">
+                <li
+                  key={`link-${link.name}`}
+                  aria-label="nav link"
+                  className="app__flex p-text"
+                >
                   <Link href={link.href}>{link.name}</Link>
                 </li>
               ))}
@@ -79,19 +88,25 @@ function Navbar() {
                 <Link
                   href="https://www.linkedin.com/in/drcolonel/"
                   target="blank"
+                  aria-label="linkedin"
                 >
                   <Linkedin />
                 </Link>
                 <Link
                   href="https://www.facebook.com/profile.php?id=100009694934872"
                   target="blank"
+                  aria-label="facebook"
                 >
                   <Facebook />
                 </Link>
-                <Link href="https://github.com/colonel14" target="blank">
+                <Link
+                  href="https://github.com/colonel14"
+                  target="blank"
+                  aria-label="github"
+                >
                   <Github />
                 </Link>
-                <Link href="tel:+20 01012234592">
+                <Link href="tel:+20 01012234592" aria-label="phone number">
                   <Phone />
                 </Link>
               </ul>

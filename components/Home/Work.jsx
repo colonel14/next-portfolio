@@ -80,7 +80,10 @@ function Work({ works }) {
                 }}
                 className="app__work-hover app__flex"
               >
-                <Link href={`/portfolio/${work.slug.current}`}>
+                <Link
+                  href={`/portfolio/${work.slug.current}`}
+                  aria-label="project link"
+                >
                   <motion.div
                     whileInView={{ scale: [0, 1] }}
                     whileHover={{ scale: [1, 0.9] }}
@@ -91,7 +94,11 @@ function Work({ works }) {
                   </motion.div>
                 </Link>
                 {work.projectLink && (
-                  <Link href={work.projectLink} target="_blank">
+                  <Link
+                    href={work.projectLink}
+                    target="_blank"
+                    aria-label="project link"
+                  >
                     <motion.div
                       whileInView={{ scale: [0, 1] }}
                       whileHover={{ scale: [1, 0.9] }}
@@ -104,7 +111,12 @@ function Work({ works }) {
                 )}
 
                 {work?.githubLink && (
-                  <Link href={work.githubLink} target="_blank" rel="noreferrer">
+                  <Link
+                    href={work.githubLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="github link"
+                  >
                     <motion.div
                       whileInView={{ scale: [0, 1] }}
                       whileHover={{ scale: [1, 0.9] }}

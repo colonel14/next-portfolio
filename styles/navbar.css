@@ -5,11 +5,6 @@
 .app__navbar {
   width: 100%;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 1rem 8rem;
   background: rgba(14, 13, 57, 0.5);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(4px);
@@ -17,6 +12,16 @@
   border: 1px solid rgba(14, 13, 57, 0.5);
   position: fixed;
   z-index: 2;
+}
+
+.app__navbar-container {
+  width: 1400px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1rem 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .app__navbar-logo {

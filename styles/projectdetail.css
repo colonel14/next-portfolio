@@ -1,0 +1,225 @@
+.app__portfolio {
+  width: 100%;
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  flex-direction: row;
+  @media screen and (max-width: 450px) {
+    padding: 4rem 1rem 2rem;
+  }
+
+  .app__social {
+    padding-left: 0;
+    padding-right: 2rem;
+  }
+}
+
+.portfolio__slider {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 300;
+  background: rgba(14, 13, 57, 0.9);
+  opacity: 0;
+  svg {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 400;
+    color: #fff;
+    font-size: 4rem;
+    cursor: pointer;
+  }
+
+  .swiper {
+    height: 100%;
+    width: 100%;
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 70%;
+        object-fit: contain;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.app__portfolio-inner {
+  gap: 50px;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  @media screen and (max-width: 1200px) {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+
+.app__portfolio-info {
+  flex: 1;
+  height: 600px;
+  max-width: 600px;
+  width: 100%;
+  background: var(--secondary-dark);
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
+
+  h1 {
+    text-align: left;
+    font-size: 24px;
+  }
+  span {
+    color: var(--gray-color);
+  }
+
+  .info-label {
+    margin-top: 2rem;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: var(--white-color);
+  }
+  .app__portfolio-info-tags {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    .portfolio_tag {
+      padding: 5px 10px;
+      color: var(--white-color);
+      border-radius: 4px;
+      margin: 5px;
+      display: flex;
+      align-items: center;
+      span {
+        width: 30px;
+        height: 30px;
+        background: var(--white-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 5px;
+        border-radius: 50%;
+        img {
+          width: 100%;
+          max-width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  .app__portfolio-info-links {
+    display: flex;
+    align-items: center;
+
+    a {
+      color: var(--white-color);
+      font-size: 1.4rem;
+      margin-right: 1rem;
+      transition: 0.3 all;
+      &:hover {
+        color: var(--red-color);
+      }
+    }
+  }
+  @media screen and(max-width: 989px) {
+    margin: 0 2rem;
+    h1 {
+      font-size: 20px;
+    }
+    .info-label {
+      font-size: 18px;
+    }
+  }
+}
+
+.app__portfolio-gallery {
+  flex: 1;
+  width: 800px;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: 1200px) and (max-width: 1300px) {
+    width: 700px;
+  }
+  @media screen and(max-width: 989px) {
+    padding: 0 1rem;
+    width: 95vw;
+  }
+  .swiper {
+    width: 100%;
+  }
+  .app__portfolio-gallery-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    height: 220px;
+    img {
+      height: 100%;
+    }
+    @media screen and(max-width: 989px) {
+      height: 100px;
+    }
+  }
+
+  .app__portfolio-gallery-thumbnail {
+    height: 700px;
+    margin-bottom: 30px;
+  }
+
+  .app__portfolio-gallery-thumbnail .swiper-slide,
+  .app__portfolio-gallery-images .swiper-slide {
+    position: relative;
+    div:nth-child(1) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 10;
+
+      opacity: 0;
+      transition: all 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        width: 50px;
+        height: 50px;
+
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+
+    &:hover {
+      div:nth-child(1) {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media screen and(max-width: 989px) {
+  .app__social {
+    display: none;
+  }
+}

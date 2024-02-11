@@ -11,6 +11,11 @@ export default defineType({
       type: "string",
     }),
     defineField({
+      name: "type",
+      title: "Type",
+      type: "string",
+    }),
+    defineField({
       name: "description",
       description: "Enter a short snippet for the service...",
       title: "Description",
@@ -51,6 +56,31 @@ export default defineType({
           title: "Alternative Text",
         },
       ],
+    }),
+    defineField({
+      name: "gallery",
+      type: "array",
+      title: "Gallery",
+      of: [
+        {
+          name: "image",
+          type: "image",
+          title: "Image",
+          options: {
+            hotspot: true,
+          },
+          fields: [
+            {
+              name: "alt",
+              type: "string",
+              title: "Alternative text",
+            },
+          ],
+        },
+      ],
+      options: {
+        layout: "grid",
+      },
     }),
     defineField({
       name: "technologies",
